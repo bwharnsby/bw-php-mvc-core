@@ -1,11 +1,11 @@
 <?php
 
 
-namespace app\core\database;
+namespace bwharnsby\phpmvc\database;
 
 
-use app\core\App;
-use app\core\Model;
+use bwharnsby\phpmvc\App;
+use bwharnsby\phpmvc\Model;
 
 abstract class DatabaseModel extends Model
 {

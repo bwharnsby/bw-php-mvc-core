@@ -1,12 +1,12 @@
 <?php
 
-namespace app\core;
+namespace bwharnsby\phpmvc;
 
-use app\core\database\Database;
+use bwharnsby\phpmvc\database\Database;
 
 /**
  * Class App
- * @package app\core
+ * @package bwharnsby\phpmvc
  */
 class App
 {

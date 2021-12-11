@@ -1,10 +1,10 @@
 <?php
 
 
-namespace app\core;
+namespace bwharnsby\phpmvc;
 
 
-use app\core\middlewares\BaseMiddleware;
+use bwharnsby\phpmvc\middlewares\BaseMiddleware;
 
 class Controller
 {
@@ -12,7 +12,7 @@ class Controller
     public string $action = '';
 
     /**
-     * @var \app\core\middlewares\BaseMiddleware[]
+     * @var \bwharnsby\phpmvc\middlewares\BaseMiddleware[]
      */
     protected array $middlewares = [];
 

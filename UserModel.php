@@ -1,10 +1,10 @@
 <?php
 
 
-namespace app\core;
+namespace bwharnsby\phpmvc;
 
 
-use app\core\database\DatabaseModel;
+use bwharnsby\phpmvc\database\DatabaseModel;
 
 abstract class UserModel extends DatabaseModel
 {

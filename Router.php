@@ -1,12 +1,12 @@
 <?php
 
-namespace app\core;
+namespace bwharnsby\phpmvc;
 
-use app\core\exceptions\NotFoundException;
+use bwharnsby\phpmvc\exceptions\NotFoundException;
 
 /**
  * Class Router
- * @package app\core
+ * @package bwharnsby\phpmvc
  */
 class Router
 {
@@ -47,7 +47,7 @@ class Router
             return $this->renderView($callback);
         }
         if(is_array($callback)) {
-            /** @var \app\core\Controller $controller */
+            /** @var \bwharnsby\phpmvc\Controller $controller */
             $controller = new $callback[0]();
             App::$app->controller = $controller;
             $controller->action = $callback[1];

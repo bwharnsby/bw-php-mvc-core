@@ -1,10 +1,10 @@
 <?php
 
 
-namespace app\core\database;
+namespace bwharnsby\phpmvc\database;
 
 
-use app\core\App;
+use bwharnsby\phpmvc\App;
 
 class Database
 {

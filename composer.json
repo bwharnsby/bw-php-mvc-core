@@ -6,7 +6,10 @@
       "email": "benwharnsby@hotmail.com"
     }
   ],
-  "require": {
-
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "bwharnsby\\phpmvc\\": "."
+    }
   }
 }
