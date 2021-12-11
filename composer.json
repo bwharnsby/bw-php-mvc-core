@@ -1,0 +1,12 @@
+{
+  "name": "bwharnsby/bw-php-mvc-core",
+  "authors": [
+    {
+      "name": "Ben Wharnsby",
+      "email": "benwharnsby@hotmail.com"
+    }
+  ],
+  "require": {
+
+  }
+}
