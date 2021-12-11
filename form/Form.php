@@ -17,8 +17,15 @@ class Form
         echo '</form>';
     }
 
-    public function field(Model $model, $attribute)
+    public function field(Model $model, $attribute, $type = '')
     {
-        return new InputField($model, $attribute);
+        switch ($type) {
+            case 'textarea':
+                $field = new TextareaField($model, $attribute);
+                break;
+            default:
+                $field = new InputField($model, $attribute);
+        }
+        return $field;
     }
 }
