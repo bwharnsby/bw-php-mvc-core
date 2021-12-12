@@ -35,4 +35,79 @@ class HtmlTag
     {
         return new Tag('h6', $text, $attributes);
     }
+
+    public static function p($text, $attributes = [])
+    {
+        return new Tag('p', $text, $attributes);
+    }
+
+    public static function table($text, $attributes = [])
+    {
+        return new Tag('table', $text, $attributes);
+    }
+
+    public static function tr($text, $attributes = [])
+    {
+        return new Tag('tr', $text, $attributes);
+    }
+
+    public static function td($text, $attributes = [])
+    {
+        return new Tag('td', $text, $attributes);
+    }
+
+    public static function th($text, $attributes = [])
+    {
+        return new Tag('th', $text, $attributes);
+    }
+
+    public static function tbody($text, $attributes = [])
+    {
+        return new Tag('tbody', $text, $attributes);
+    }
+
+    public static function thead($text, $attributes = [])
+    {
+        return new Tag('thead', $text, $attributes);
+    }
+
+    public static function div($text, $attributes = [])
+    {
+        return new Tag('div', $text, $attributes);
+    }
+
+    public static function span($text, $attributes = [])
+    {
+        return new Tag('span', $text, $attributes);
+    }
+
+    public static function ul($text, $attributes = [])
+    {
+        return new Tag('ul', $text, $attributes);
+    }
+
+    public static function ol($text, $attributes = [])
+    {
+        return new Tag('ul', $text, $attributes);
+    }
+
+    public static function li($text, $attributes = [])
+    {
+        return new Tag('ul', $text, $attributes);
+    }
+
+    public static function a($text, $attributes = [])
+    {
+        return new Tag('a', $text, $attributes);
+    }
+
+    public static function br()
+    {
+        return '<br />';
+    }
+
+    public static function hr()
+    {
+        return '<hr>';
+    }
 }
