@@ -19,7 +19,7 @@ class Tag
 
     public function __toString()
     {
-        $attrs = implode(" ", array_map(fn($k, $v) => "$k='$v'", $this->attributes));
+        $attrs = implode(" ", array_map(fn($k, $v) => "$k='$v'", array_keys($this->attributes), $this->attributes));
         return sprintf(
             "<%s %s>%s</%s>",
             $this->tag_name,
