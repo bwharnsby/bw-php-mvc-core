@@ -80,4 +80,13 @@ class HtmlComponents
         $table .= HtmlTag::tbody($tbody);
         return HtmlTag::table($table, $attributes);
     }
+
+    public static function row($cols, $attributes = [])
+    {
+        $row = "";
+        foreach ($cols as $col) {
+            $row .= HtmlTag::div($col['text'], $col['attributes']);
+        }
+        return HtmlTag::div($row, $attributes);
+    }
 }
