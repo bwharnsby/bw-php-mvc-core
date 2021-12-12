@@ -19,8 +19,8 @@ class HtmlComponents
         $body .= HtmlTag::p($text, ['class' => 'card-text']);
         $card .= HtmlTag::div($body, ['class' => 'card-body']);
 
-        $classes = implode(" ", $attributes['classes']);
-        $style = $attributes['style'];
+        $classes = implode(" ", $attributes['classes']) ?? '';
+        $style = $attributes['style'] ?? '';
         return HtmlTag::div($card, ['class' => "card $classes", 'style' => $style]);
     }
 
@@ -51,5 +51,31 @@ class HtmlComponents
             }
         }
         return HtmlTag::ol($list_items, ['class' => "breadcrumb"]);
+    }
+
+    public static function table($values, $headers = [], $attributes = [], $withRowHeaders = false)
+    {
+        $table = "";
+        if(!empty($headers)) {
+            $tr = "";
+            foreach ($headers as $h) {
+                $tr .= HtmlTag::th($h['text'], $h['attributes']);
+            }
+            $table .= HtmlTag::thead(HtmlTag::tr($tr));
+        }
+        $tbody = "";
+        for ($i = 0; $i < count($values); $i++) {
+            $value_arr = $values[$i];
+            $tr = "";
+            if($i == 0 && $withRowHeaders) {
+                $tr .= HtmlTag::th($value_arr['text'], $value_arr['attributes']);
+            }
+            else {
+                $tr .= HtmlTag::td($value_arr['text'], $value_arr['attributes']);
+            }
+            $tbody .= HtmlTag::tr($tr, $value_arr['class']);
+        }
+        $table .= HtmlTag::tbody($tbody);
+        return HtmlTag::table($table, $attributes);
     }
 }

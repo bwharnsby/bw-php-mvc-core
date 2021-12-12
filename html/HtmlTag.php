@@ -88,12 +88,12 @@ class HtmlTag
 
     public static function ol($text, $attributes = [])
     {
-        return new Tag('ul', $text, $attributes);
+        return new Tag('ol', $text, $attributes);
     }
 
     public static function li($text, $attributes = [])
     {
-        return new Tag('ul', $text, $attributes);
+        return new Tag('li', $text, $attributes);
     }
 
     public static function a($text, $attributes = [])
