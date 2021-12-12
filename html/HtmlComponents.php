@@ -19,8 +19,8 @@ class HtmlComponents
         $body .= HtmlTag::p($text, ['class' => 'card-text']);
         $card .= HtmlTag::div($body, ['class' => 'card-body']);
 
-        $classes = implode(" ", $attributes['classes']) ?? '';
-        $style = $attributes['style'] ?? '';
+        $classes = array_key_exists('classes', $attributes) ? implode(" ", $attributes['classes']) : '';
+        $style = array_key_exists('style', $attributes) ? $attributes['style'] : '';
         return HtmlTag::div($card, ['class' => "card $classes", 'style' => $style]);
     }
 
@@ -67,13 +67,15 @@ class HtmlComponents
         for ($i = 0; $i < count($values); $i++) {
             $value_arr = $values[$i];
             $tr = "";
-            if($i == 0 && $withRowHeaders) {
-                $tr .= HtmlTag::th($value_arr['text'], $value_arr['attributes']);
+            foreach($value_arr['data'] as $data_ele) {
+                if($i == 0 && $withRowHeaders) {
+                    $tr .= HtmlTag::th($data_ele['text'], $data_ele['attributes']);
+                }
+                else {
+                    $tr .= HtmlTag::td($data_ele['text'], $data_ele['attributes']);
+                }
             }
-            else {
-                $tr .= HtmlTag::td($value_arr['text'], $value_arr['attributes']);
-            }
-            $tbody .= HtmlTag::tr($tr, $value_arr['class']);
+            $tbody .= HtmlTag::tr($tr, $value_arr['attributes']);
         }
         $table .= HtmlTag::tbody($tbody);
         return HtmlTag::table($table, $attributes);
