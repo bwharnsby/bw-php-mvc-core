@@ -101,6 +101,11 @@ class HtmlTag
         return new Tag('a', $text, $attributes);
     }
 
+    public static function button($text, $attributes = [])
+    {
+        return new Tag('button', $text, $attributes);
+    }
+
     public static function br()
     {
         return '<br />';

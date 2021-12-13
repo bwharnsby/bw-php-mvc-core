@@ -46,8 +46,8 @@ class HtmlComponents
                 $list_items .= HtmlTag::li($link['text'], ['class' => 'breadcrumb-item active']);
             }
             else {
-                $anchor = HtmlTag::a($link['text'], ['href' => $link['href']]);
-                $list_items .= HtmlTag::li($anchor, ['class' => 'breadcrumb-item active']);
+                $anchor = HtmlTag::a($link['text'], $link['attributes']);
+                $list_items .= HtmlTag::li($anchor, ['class' => 'breadcrumb-item']);
             }
         }
         return HtmlTag::ol($list_items, ['class' => "breadcrumb"]);
